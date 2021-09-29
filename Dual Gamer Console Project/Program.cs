@@ -10,6 +10,8 @@ namespace Dual_Gamer_Console_Project
     {
         static void Main(string[] args)
         {
+            ProgramUI program = new ProgramUI();
+            program.Run();
         }
     }
 }
