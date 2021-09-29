@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace _02_Startup
 {
-    class InitializeSession
+    public class GameStateRepo
     {
+        private List<GameState> _gameState = new List<GameState>();
+
+        // C
+
+        // R
+
+        // U
+
+        // D
+
     }
 }
