@@ -10,13 +10,15 @@ namespace _02_Startup
     {
         private List<GameState> _gameState = new List<GameState>();
 
-        // C
+        // C Make a New Game
 
-        // R
+        // R List all Saved Games
 
-        // U
+        // U Update a New Game
 
-        // D
+        // D Delete a Game
 
     }
+
+
 }

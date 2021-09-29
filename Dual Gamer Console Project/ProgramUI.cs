@@ -68,12 +68,20 @@ namespace Dual_Gamer_Console_Project
             Console.WriteLine("Name");
             string newName = Console.ReadLine();
 
-            Console.WriteLine("You are born without skills or knowledge.");
-            
+            Console.WriteLine("You are born without skills or knowledge.\n");
+
             // Content here for being able to choose type of character
-            
-            // Make a New Game
+
+            Console.WriteLine("Which Saved Game slot would you like to use?");
+            string chosenSlot = Console.ReadLine();
+
+            // Make a New Game M
             GameState gameOne = new GameState(newName, 0, 0, 0, 0, 0);
+
+
+            // 
+
+            // Save Game M
             // Run Game M
         }
 
@@ -89,5 +97,61 @@ namespace Dual_Gamer_Console_Project
             // Run Game M
         }
 
+
+        // 0. Save and Exit
+
+        // Save the Game
+
+        private void SaveGame()
+        {
+            Console.Clear();
+            //Save Game M
+
+            //Exit to Start Menu
+            StartMenu();
+
+        }
+
+
+        public void DayOneMenu()
+        {
+            int inputA = 1;
+
+            switch (inputA)
+            {
+                case 1:
+                // NewGame
+
+                // Option Desc Text
+
+                ChangePlayerState(/* */); //eventID, optionID  (event 20, option 2) (array[]) (where this object is)
+
+                GottoNextDay();
+
+                break;
+            }
+        }
+
+
+    public void ChangePlayerState(/*A, B, C, D, E*/)
+        {
+            // Change Attribute A 
+            // Change Attribute B
+            // Change Attribute C
+            // Change Attribute D
+            // Change Attribute E
+        }
+
+        public class EventsOfTheWeek
+        {
+            // Object
+
+            // IDNUMBER
+            // Event Text
+            // 1 Option Text
+            // 1 Option Params
+            // 2 Option Text
+            // 2 Option Params
+        }
     }
 }

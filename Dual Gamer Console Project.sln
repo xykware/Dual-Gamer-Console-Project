@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Dual Gamer Console Proje
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{67823646-5A51-43C2-8D7A-5CB1DEFE2559}"
 	ProjectSection(SolutionItems) = preProject
+		EventContentMockup.txt = EventContentMockup.txt
 		flow.md = flow.md
 		..\..\..\Desktop\LearningByDoing.png = ..\..\..\Desktop\LearningByDoing.png
 		sketch.md = sketch.md
