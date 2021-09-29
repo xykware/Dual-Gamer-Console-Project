@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_SessionObjectandRepo", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_EventObjectandRepo", "04_EventObjectandRepo\04_EventObjectandRepo.csproj", "{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_DataHandlingLib", "05_DataHandlingLib\05_DataHandlingLib.csproj", "{06E29633-8159-4D0A-917C-FA57B303CBC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E29633-8159-4D0A-917C-FA57B303CBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E29633-8159-4D0A-917C-FA57B303CBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E29633-8159-4D0A-917C-FA57B303CBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E29633-8159-4D0A-917C-FA57B303CBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
