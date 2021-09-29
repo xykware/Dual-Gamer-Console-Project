@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _02_Startup;
+using _03_Session;
+using _04_EventObjectandRepo;
+using _05_DataHandlingLib;
 
 namespace Dual_Gamer_Console_Project
 {
     public class ProgramUI
     {
+        public GameStateRepo seedRepo = new GameStateRepo();
+
         public void Run()
         {
             StartMenu();
@@ -75,14 +80,12 @@ namespace Dual_Gamer_Console_Project
             Console.WriteLine("Which Saved Game slot would you like to use?");
             string chosenSlot = Console.ReadLine();
 
-            // Make a New Game M
-            GameState gameOne = new GameState(newName, 0, 0, 0, 0, 0);
+            seedRepo.MakeANewGame();
 
+            // Save Game M (P)
+            // GameState gameOne = new GameState(newName, 0, 0, 0, 0, 0); (V)
 
-            // 
-
-            // Save Game M
-            // Run Game M
+            StartTheGUI();
         }
 
         // Load a Saved Game - (P)
@@ -93,10 +96,26 @@ namespace Dual_Gamer_Console_Project
             Console.WriteLine("Which Save File would you like to continue?");
             string oldGameNumber = Console.ReadLine();
             int oldGameNumberParsed = int.Parse(oldGameNumber);
-            // Load Save Game M
-            // Run Game M
+
+            LoadAnOldgame();
+
+            StartTheGUI();
         }
 
+        private void StartTheGUI()
+        {
+            //pass gamestate
+
+            //instance eventcontent
+            EventContent gameOneEvents = new EventContent();
+
+            //create intital GUI
+
+            //populate intial GUI state - load "intro" event
+            BorderStuff gamePlay = new BorderStuff();
+            gamePlay.RunGame(gameOne);
+
+        }
 
         // 0. Save and Exit
 
@@ -111,7 +130,6 @@ namespace Dual_Gamer_Console_Project
             StartMenu();
 
         }
-
 
         public void DayOneMenu()
         {
@@ -131,7 +149,6 @@ namespace Dual_Gamer_Console_Project
                 break;
             }
         }
-
 
     public void ChangePlayerState(/*A, B, C, D, E*/)
         {

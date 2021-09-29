@@ -19,5 +19,12 @@ namespace _04_EventObjectandRepo
 
         // D
 
+        // Load existing EventContent
+
+        private void LoadEventContent()
+        {
+
+        }
+
     }
 }

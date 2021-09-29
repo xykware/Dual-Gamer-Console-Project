@@ -59,6 +59,18 @@
       <Project>{a260933b-29f9-4fe4-a8cf-addfba890283}</Project>
       <Name>02_Startup</Name>
     </ProjectReference>
+    <ProjectReference Include="..\03_Session\03_SessionObjectandRepo.csproj">
+      <Project>{0d939498-0816-484d-b3dd-dbec7e01ec29}</Project>
+      <Name>03_SessionObjectandRepo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\04_EventObjectandRepo\04_EventObjectandRepo.csproj">
+      <Project>{4f47fecc-bdf5-4bf9-a3c9-fd7b32de4806}</Project>
+      <Name>04_EventObjectandRepo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\05_DataHandlingLib\05_DataHandlingLib.csproj">
+      <Project>{06e29633-8159-4d0a-917c-fa57b303cbc7}</Project>
+      <Name>05_DataHandlingLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
