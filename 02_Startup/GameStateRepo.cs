@@ -11,9 +11,11 @@ namespace _02_Startup
         public List<GameState> _gameState = new List<GameState>();
 
         // C Make a New Game
-        public void MakeANewGame()
+        public GameState MakeANewGame(string userName)
         {
-            
+            GameState newGame = new GameState(userName, 0, 0, 0, 0, 0);
+
+            return newGame;
         }
 
         // R List all Saved Games
@@ -24,9 +26,9 @@ namespace _02_Startup
 
         // Load A GameState
 
-        public void LoadAnOldgame()
+        public GameState LoadAnOldgame()
         {
-
+            return null;
         }
 
     }

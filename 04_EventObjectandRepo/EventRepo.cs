@@ -9,7 +9,7 @@ namespace _04_EventObjectandRepo
 {
     public class EventContentRepo
     {
-        private List<EventContent> _list = new List<EventContent>();
+        public List<EventContent> _list = new List<EventContent>();
 
         // C
 
@@ -21,7 +21,7 @@ namespace _04_EventObjectandRepo
 
         // Load existing EventContent
 
-        private void LoadEventContent()
+        public void LoadEventContent()
         {
 
         }

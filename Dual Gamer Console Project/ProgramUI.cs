@@ -7,15 +7,18 @@ using _02_Startup;
 using _03_Session;
 using _04_EventObjectandRepo;
 using _05_DataHandlingLib;
+using GameUI;
 
 namespace Dual_Gamer_Console_Project
 {
     public class ProgramUI
     {
         public GameStateRepo seedRepo = new GameStateRepo();
+        EventContentRepo eventRepo = new EventContentRepo();
 
         public void Run()
         {
+            SeedData();
             StartMenu();
         }
 
@@ -80,12 +83,12 @@ namespace Dual_Gamer_Console_Project
             Console.WriteLine("Which Saved Game slot would you like to use?");
             string chosenSlot = Console.ReadLine();
 
-            seedRepo.MakeANewGame();
+            GameState newGame = seedRepo.MakeANewGame(newName);
 
             // Save Game M (P)
             // GameState gameOne = new GameState(newName, 0, 0, 0, 0, 0); (V)
 
-            StartTheGUI();
+            StartTheGUI(newGame);
         }
 
         // Load a Saved Game - (P)
@@ -97,12 +100,12 @@ namespace Dual_Gamer_Console_Project
             string oldGameNumber = Console.ReadLine();
             int oldGameNumberParsed = int.Parse(oldGameNumber);
 
-            LoadAnOldgame();
+            GameState loadGame = seedRepo.LoadAnOldgame();
 
-            StartTheGUI();
+            StartTheGUI(loadGame);
         }
 
-        private void StartTheGUI()
+        private void StartTheGUI(GameState game)
         {
             //pass gamestate
 
@@ -112,14 +115,30 @@ namespace Dual_Gamer_Console_Project
             //create intital GUI
 
             //populate intial GUI state - load "intro" event
-            BorderStuff gamePlay = new BorderStuff();
-            gamePlay.RunGame(gameOne);
+            BordersLayout gamePlay = new BordersLayout();
 
+            int eventNumber = 0;
+
+            bool keepGUIRunning = true;
+
+            while (keepGUIRunning)
+            {
+                int newEventNumber = gamePlay.RunGUI(game, (eventRepo._list[eventNumber]));
+                if (newEventNumber < 0)
+                {
+                    keepGUIRunning = false;
+                    //Add save and exit method
+                }
+                else if (newEventNumber <= eventRepo._list.Count)
+                {
+                    eventNumber = newEventNumber;
+                }
+                else
+                {
+                    keepGUIRunning = false;
+                }
+            }
         }
-
-        // 0. Save and Exit
-
-        // Save the Game
 
         private void SaveGame()
         {
@@ -131,44 +150,26 @@ namespace Dual_Gamer_Console_Project
 
         }
 
-        public void DayOneMenu()
+        public void SeedData()
         {
-            int inputA = 1;
+            EventContent testContent = new EventContent();
+            EventContent testContent2 = new EventContent();
+            
 
-            switch (inputA)
-            {
-                case 1:
-                // NewGame
+            testContent.EventNumber = 0;
+            testContent.EventText = "Hello World XD";
+            testContent.OptionOneText = "If you can read this type 1";
+            testContent.OptionOneParams = new int[] { 24, -1, -5, 1 };
+            testContent.OptionOneGotoEvent = 1;
 
-                // Option Desc Text
+            testContent2.EventNumber = 1;
+            testContent2.EventText = "Good morning.";
+            testContent2.OptionOneText = "If you can read this type 1";
+            testContent2.OptionOneParams = new int[] { 0, 0, 0, 1 };
+            testContent2.OptionOneGotoEvent = 0;
 
-                ChangePlayerState(/* */); //eventID, optionID  (event 20, option 2) (array[]) (where this object is)
-
-                GottoNextDay();
-
-                break;
-            }
-        }
-
-    public void ChangePlayerState(/*A, B, C, D, E*/)
-        {
-            // Change Attribute A 
-            // Change Attribute B
-            // Change Attribute C
-            // Change Attribute D
-            // Change Attribute E
-        }
-
-        public class EventsOfTheWeek
-        {
-            // Object
-
-            // IDNUMBER
-            // Event Text
-            // 1 Option Text
-            // 1 Option Params
-            // 2 Option Text
-            // 2 Option Params
+            eventRepo._list.Add(testContent);
+            eventRepo._list.Add(testContent2);
         }
     }
 }
