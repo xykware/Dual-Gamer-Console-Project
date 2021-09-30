@@ -9,12 +9,10 @@ namespace _03_Session
     public class SessionObject
     {
         // "create" the session
-            // 2d array
 
         // Name the "PC"
 
         // assign base attribute
-
     }
 
 

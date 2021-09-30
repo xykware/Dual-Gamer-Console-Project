@@ -44,13 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GoogleSheetStuff.cs" />
-    <Compile Include="JSON_Stuff.cs" />
+    <Compile Include="parse_methods.cs" />
+    <Compile Include="CSV_Stuff.cs" />
+    <Compile Include="txt_Stuff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LocalData.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02_Startup\02_Startup.csproj">
+      <Project>{A260933B-29F9-4FE4-A8CF-ADDFBA890283}</Project>
+      <Name>02_Startup</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

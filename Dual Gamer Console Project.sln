@@ -15,8 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Startup", "02_Startup\02_Startup.csproj", "{A260933B-29F9-4FE4-A8CF-ADDFBA890283}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_SessionObjectandRepo", "03_Session\03_SessionObjectandRepo.csproj", "{0D939498-0816-484D-B3DD-DBEC7E01EC29}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_EventObjectandRepo", "04_EventObjectandRepo\04_EventObjectandRepo.csproj", "{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_DataHandlingLib", "05_DataHandlingLib\05_DataHandlingLib.csproj", "{06E29633-8159-4D0A-917C-FA57B303CBC7}"
@@ -37,10 +35,6 @@ Global
 		{A260933B-29F9-4FE4-A8CF-ADDFBA890283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A260933B-29F9-4FE4-A8CF-ADDFBA890283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A260933B-29F9-4FE4-A8CF-ADDFBA890283}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D939498-0816-484D-B3DD-DBEC7E01EC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D939498-0816-484D-B3DD-DBEC7E01EC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D939498-0816-484D-B3DD-DBEC7E01EC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D939498-0816-484D-B3DD-DBEC7E01EC29}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}.Release|Any CPU.ActiveCfg = Release|Any CPU

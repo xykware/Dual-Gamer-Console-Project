@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _02_Startup;
-using _03_Session;
 using _04_EventObjectandRepo;
 using _05_DataHandlingLib;
 using GameUI;
@@ -14,11 +13,10 @@ namespace Dual_Gamer_Console_Project
     public class ProgramUI
     {
         public GameStateRepo seedRepo = new GameStateRepo();
-        EventContentRepo eventRepo = new EventContentRepo();
 
         public void Run()
         {
-            SeedData();
+            //Seed Here Please
             StartMenu();
         }
 
@@ -83,12 +81,12 @@ namespace Dual_Gamer_Console_Project
             Console.WriteLine("Which Saved Game slot would you like to use?");
             string chosenSlot = Console.ReadLine();
 
-            GameState newGame = seedRepo.MakeANewGame(newName);
+            //seedRepo.MakeANewGame();
 
             // Save Game M (P)
             // GameState gameOne = new GameState(newName, 0, 0, 0, 0, 0); (V)
 
-            StartTheGUI(newGame);
+            //StartTheGUI();
         }
 
         // Load a Saved Game - (P)
@@ -100,9 +98,9 @@ namespace Dual_Gamer_Console_Project
             string oldGameNumber = Console.ReadLine();
             int oldGameNumberParsed = int.Parse(oldGameNumber);
 
-            GameState loadGame = seedRepo.LoadAnOldgame();
+            //LoadAnOldgame();
 
-            StartTheGUI(loadGame);
+            //StartTheGUI();
         }
 
         private void StartTheGUI(GameState game)
@@ -116,29 +114,11 @@ namespace Dual_Gamer_Console_Project
 
             //populate intial GUI state - load "intro" event
             BordersLayout gamePlay = new BordersLayout();
+            //gamePlay.RunGame(game);
 
-            int eventNumber = 0;
-
-            bool keepGUIRunning = true;
-
-            while (keepGUIRunning)
-            {
-                int newEventNumber = gamePlay.RunGUI(game, (eventRepo._list[eventNumber]));
-                if (newEventNumber < 0)
-                {
-                    keepGUIRunning = false;
-                    //Add save and exit method
-                }
-                else if (newEventNumber <= eventRepo._list.Count)
-                {
-                    eventNumber = newEventNumber;
-                }
-                else
-                {
-                    keepGUIRunning = false;
-                }
-            }
         }
+
+        // Save the Game
 
         private void SaveGame()
         {
@@ -147,29 +127,6 @@ namespace Dual_Gamer_Console_Project
 
             //Exit to Start Menu
             StartMenu();
-
-        }
-
-        public void SeedData()
-        {
-            EventContent testContent = new EventContent();
-            EventContent testContent2 = new EventContent();
-            
-
-            testContent.EventNumber = 0;
-            testContent.EventText = "Hello World XD";
-            testContent.OptionOneText = "If you can read this type 1";
-            testContent.OptionOneParams = new int[] { 24, -1, -5, 1 };
-            testContent.OptionOneGotoEvent = 1;
-
-            testContent2.EventNumber = 1;
-            testContent2.EventText = "Good morning.";
-            testContent2.OptionOneText = "If you can read this type 1";
-            testContent2.OptionOneParams = new int[] { 0, 0, 0, 1 };
-            testContent2.OptionOneGotoEvent = 0;
-
-            eventRepo._list.Add(testContent);
-            eventRepo._list.Add(testContent2);
         }
     }
 }

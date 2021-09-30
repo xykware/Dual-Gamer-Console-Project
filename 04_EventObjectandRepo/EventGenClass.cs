@@ -9,6 +9,7 @@ namespace _04_EventObjectandRepo
     public class EventContent
     {
         public int EventNumber { get; set; }
+        public DateTime EventTime { get; set; }
         public string EventText { get; set; }
         public string OptionOneText { get; set; }
         public int[] OptionOneParams { get; set; }
@@ -28,9 +29,10 @@ namespace _04_EventObjectandRepo
 
         public EventContent() { }
 
-        public EventContent(int eventNumber, string eventText, string optionOneText, int[] optionOneParams, int optionOneGotoEvent, string optionTwoText, int[] optionTwoParams, int optionTwoGotoEvent, string optionThreeText, int[] optionThreeParams, int optionThreeGotoEvent, string optionFourText, int[] optionFourParams, int optionFourGotoEvent, string optionFiveText, int[] optionFiveParams, int optionFiveGotoEvent)
+        public EventContent(int eventNumber, DateTime eventTime, string eventText, string optionOneText, int[] optionOneParams, int optionOneGotoEvent, string optionTwoText, int[] optionTwoParams, int optionTwoGotoEvent, string optionThreeText, int[] optionThreeParams, int optionThreeGotoEvent, string optionFourText, int[] optionFourParams, int optionFourGotoEvent, string optionFiveText, int[] optionFiveParams, int optionFiveGotoEvent)
         {
             EventNumber = eventNumber;
+            EventTime = eventTime;
             EventText = eventText;
             OptionOneText = optionOneText;
             OptionOneParams = optionOneParams;
