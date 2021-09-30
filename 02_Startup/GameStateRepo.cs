@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,11 +27,32 @@ namespace _02_Startup
 
         // Load A GameState
 
-        public GameState LoadAnOldgame()
+        public GameState LoadOldgame(int loadSlot)
         {
-            return null;
+            string loadDataFile = File.ReadAllText($@"save_{loadSlot}.txt");
+
+            string[] loadData = loadDataFile.Split(',');
+
+            string dataName = loadData[1];
+            int dataTurn = int.Parse(loadData[0]);
+            int dataKnowledge = int.Parse(loadData[5]);
+            int dataRest = int.Parse(loadData[2]);
+            int dataSanity = int.Parse(loadData[3]);
+            int dataGrade = int.Parse(loadData[4]);
+
+            GameState loadGame = new GameState(dataName, dataTurn, dataKnowledge, dataRest, dataSanity, dataGrade);
+
+            return loadGame;
         }
 
+        public void SaveNewGame(int saveSlot, GameState saveGame)
+        {
+            using (StreamWriter writer = new StreamWriter($"save_{saveSlot}.txt", false))
+            {
+                string saveData = $"{saveGame.Turn},{saveGame.PlayerName},{saveGame.AttRest},{saveGame.AttSanity},{saveGame.AttGrade},{saveGame.AttKnowledge}";
+                writer.Write(saveData);
+            }
+        }
     }
 
 

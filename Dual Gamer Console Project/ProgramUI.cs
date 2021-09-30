@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,12 @@ namespace Dual_Gamer_Console_Project
 {
     public class ProgramUI
     {
-        public GameStateRepo seedRepo = new GameStateRepo();
+        public GameStateRepo gameStateRepo = new GameStateRepo();
         EventContentRepo eventRepo = new EventContentRepo();
 
         public void Run()
         {
-            SeedData();
+            InitEvents("events.txt");
             StartMenu();
         }
 
@@ -83,12 +84,12 @@ namespace Dual_Gamer_Console_Project
             Console.WriteLine("Which Saved Game slot would you like to use?");
             string chosenSlot = Console.ReadLine();
 
-            GameState newGame = seedRepo.MakeANewGame(newName);
+            GameState newGame = gameStateRepo.MakeANewGame(newName);
 
             // Save Game M (P)
             // GameState gameOne = new GameState(newName, 0, 0, 0, 0, 0); (V)
 
-            StartTheGUI(newGame);
+            StartTheGUI(newGame, int.Parse(chosenSlot));
         }
 
         // Load a Saved Game - (P)
@@ -100,12 +101,12 @@ namespace Dual_Gamer_Console_Project
             string oldGameNumber = Console.ReadLine();
             int oldGameNumberParsed = int.Parse(oldGameNumber);
 
-            GameState loadGame = seedRepo.LoadAnOldgame();
+            GameState loadGame = gameStateRepo.LoadOldgame(oldGameNumberParsed);
 
-            StartTheGUI(loadGame);
+            StartTheGUI(loadGame, oldGameNumberParsed);
         }
 
-        private void StartTheGUI(GameState game)
+        private void StartTheGUI(GameState game, int slot)
         {
             //pass gamestate
 
@@ -117,21 +118,19 @@ namespace Dual_Gamer_Console_Project
             //populate intial GUI state - load "intro" event
             BordersLayout gamePlay = new BordersLayout();
 
-            int eventNumber = 0;
-
             bool keepGUIRunning = true;
 
             while (keepGUIRunning)
             {
-                int newEventNumber = gamePlay.RunGUI(game, (eventRepo._list[eventNumber]));
-                if (newEventNumber < 0)
+                int newTurn = gamePlay.RunGUI(game, (eventRepo._list[game.Turn]));
+                if (newTurn < 0)
                 {
                     keepGUIRunning = false;
-                    //Add save and exit method
+                    SaveGame(slot, game);
                 }
-                else if (newEventNumber <= eventRepo._list.Count)
+                else if (newTurn <= eventRepo._list.Count)
                 {
-                    eventNumber = newEventNumber;
+                    game.Turn = newTurn;
                 }
                 else
                 {
@@ -140,17 +139,148 @@ namespace Dual_Gamer_Console_Project
             }
         }
 
-        private void SaveGame()
+        public void SaveGame(int saveSlot, GameState saveGame)
         {
             Console.Clear();
+
             //Save Game M
+            gameStateRepo.SaveNewGame(saveSlot, saveGame);
 
-            //Exit to Start Menu
-            StartMenu();
-
+            Console.WriteLine($"Game saved to: save_{saveSlot}.txt\n\n");
         }
 
-        public void SeedData()
+        public void InitEvents(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                string[] eventsFile = File.ReadAllLines(@filePath);
+                int i = -1;
+
+                EventContent eventContent = new EventContent();
+
+                foreach (string eventsData in eventsFile)
+                {
+                    i++;
+                    if (eventsData == "|")
+                    {
+                        eventRepo._list.Add(eventContent);
+                        eventContent = new EventContent();
+                        i = -1;
+                    }
+
+                    if (i == 0)
+                    {
+                        eventContent.EventNumber = int.Parse(eventsData);
+                    }
+                    else if (i == 1)
+                    {
+                        eventContent.EventText = eventsData;
+                    }
+                    else if (i == 2)
+                    {
+                        eventContent.OptionOneText = eventsData;
+                    }
+                    else if (i == 3)
+                    {
+                        string[] optionParamsStringArray = eventsData.Split(',');
+                        int[] optionParams = new int[4];
+                        int iParam = 0;
+                        foreach(string optionParamString in optionParamsStringArray)
+                        {
+                            optionParams[iParam] = int.Parse(optionParamString);
+                            iParam++;
+                        }
+                        eventContent.OptionOneParams = optionParams;
+                    }
+                    else if (i == 4)
+                    {
+                        eventContent.OptionOneGotoEvent = int.Parse(eventsData);
+                    }
+                    else if (i == 5)
+                    {
+                        eventContent.OptionTwoText = eventsData;
+                    }
+                    else if (i == 6)
+                    {
+                        string[] optionParamsStringArray = eventsData.Split(',');
+                        int[] optionParams = new int[4];
+                        int iParam = 0;
+                        foreach (string optionParamString in optionParamsStringArray)
+                        {
+                            optionParams[iParam] = int.Parse(optionParamString);
+                            iParam++;
+                        }
+                        eventContent.OptionTwoParams = optionParams;
+                    }
+                    else if (i == 7)
+                    {
+                        eventContent.OptionTwoGotoEvent = int.Parse(eventsData);
+                    }
+                    else if (i == 8)
+                    {
+                        eventContent.OptionThreeText = eventsData;
+                    }
+                    else if (i == 9)
+                    {
+                        string[] optionParamsStringArray = eventsData.Split(',');
+                        int[] optionParams = new int[4];
+                        int iParam = 0;
+                        foreach (string optionParamString in optionParamsStringArray)
+                        {
+                            optionParams[iParam] = int.Parse(optionParamString);
+                            iParam++;
+                        }
+                        eventContent.OptionThreeParams = optionParams;
+                    }
+                    else if (i == 10)
+                    {
+                        eventContent.OptionThreeGotoEvent = int.Parse(eventsData);
+                    }
+                    else if (i == 11)
+                    {
+                        eventContent.OptionFourText = eventsData;
+                    }
+                    else if (i == 12)
+                    {
+                        string[] optionParamsStringArray = eventsData.Split(',');
+                        int[] optionParams = new int[4];
+                        int iParam = 0;
+                        foreach (string optionParamString in optionParamsStringArray)
+                        {
+                            optionParams[iParam] = int.Parse(optionParamString);
+                            iParam++;
+                        }
+                        eventContent.OptionFourParams = optionParams;
+                    }
+                    else if (i == 13)
+                    {
+                        eventContent.OptionFourGotoEvent = int.Parse(eventsData);
+                    }
+                    else if (i == 14)
+                    {
+                        eventContent.OptionFiveText = eventsData;
+                    }
+                    else if (i == 15)
+                    {
+                        string[] optionParamsStringArray = eventsData.Split(',');
+                        int[] optionParams = new int[4];
+                        int iParam = 0;
+                        foreach (string optionParamString in optionParamsStringArray)
+                        {
+                            optionParams[iParam] = int.Parse(optionParamString);
+                            iParam++;
+                        }
+                        eventContent.OptionFiveParams = optionParams;
+                    }
+                    else if (i == 16)
+                    {
+                        eventContent.OptionFiveGotoEvent = int.Parse(eventsData);
+                    }
+                }
+            }
+        }
+
+        /*public void SeedData()
         {
             EventContent testContent = new EventContent();
             EventContent testContent2 = new EventContent();
@@ -170,6 +300,6 @@ namespace Dual_Gamer_Console_Project
 
             eventRepo._list.Add(testContent);
             eventRepo._list.Add(testContent2);
-        }
+        }*/
     }
 }

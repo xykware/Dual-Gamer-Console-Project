@@ -32,12 +32,16 @@ namespace GameUI
                 $"Grade: {game.AttGrade} ; ; " +
                 $"Knowledge: {game.AttKnowledge} ; ; ");
 
-            WriteInBorder(timePositions, 2, "Week 1, Day 1, Morning, 9:00 AM");
+            //WriteInBorder(timePositions, 2, "Week 1, Day 1, Morning, 9:00 AM");
 
             WriteInBorder(messagePositions, 2, eventContent.EventText);
 
-            string optionsString = $"1. {eventContent.OptionOneText} ; ; ";
+            string optionsString = "";
 
+            if (eventContent.OptionOneText != null)
+            {
+                optionsString += $"1. {eventContent.OptionOneText} ; ; ";
+            }
             if(eventContent.OptionTwoText != null)
             {
                 optionsString += $"2. {eventContent.OptionTwoText} ; ; ";
@@ -57,6 +61,8 @@ namespace GameUI
             {
                 optionsString += $"5. {eventContent.OptionFiveText} ; ; ";
             }
+
+            optionsString += $"0. Save and Exit ; ; ";
 
             WriteInBorder(optionsPositions, 3, optionsString);
 
