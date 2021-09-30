@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{176D13A6-5F42-4D72-BA06-B610EFC1EE18}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Dual_Gamer_Console_Project</RootNamespace>
-    <AssemblyName>Dual Gamer Console Project</AssemblyName>
+    <ProjectGuid>{C9B07C15-BC38-4DA0-BED8-D100546CF9BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameUI</RootNamespace>
+    <AssemblyName>GameUI</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,34 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="ProgramUI.cs" />
+    <Compile Include="BordersLayout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\02_Startup\02_Startup.csproj">
-      <Project>{a260933b-29f9-4fe4-a8cf-addfba890283}</Project>
+      <Project>{A260933B-29F9-4FE4-A8CF-ADDFBA890283}</Project>
       <Name>02_Startup</Name>
     </ProjectReference>
-    <ProjectReference Include="..\03_Session\03_SessionObjectandRepo.csproj">
-      <Project>{0d939498-0816-484d-b3dd-dbec7e01ec29}</Project>
-      <Name>03_SessionObjectandRepo</Name>
-    </ProjectReference>
     <ProjectReference Include="..\04_EventObjectandRepo\04_EventObjectandRepo.csproj">
-      <Project>{4f47fecc-bdf5-4bf9-a3c9-fd7b32de4806}</Project>
+      <Project>{4F47FECC-BDF5-4BF9-A3C9-FD7B32DE4806}</Project>
       <Name>04_EventObjectandRepo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\05_DataHandlingLib\05_DataHandlingLib.csproj">
-      <Project>{06e29633-8159-4d0a-917c-fa57b303cbc7}</Project>
-      <Name>05_DataHandlingLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GameUI\GameUI.csproj">
-      <Project>{c9b07c15-bc38-4da0-bed8-d100546cf9be}</Project>
-      <Name>GameUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

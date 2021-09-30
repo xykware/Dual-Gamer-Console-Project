@@ -1,0 +1,165 @@
+0
+You have chosen a life of code.  Now, you make smaller choices.  The results of those choices will be your future.  The future is graded, at least in this Sim.  Good luck.
+Open the Zoom meeting and get it on.
+0,0,0,0
+1
+|
+1
+The first day begins. Your instructor is doing the introductions and leading an icebreaker exercise.
+Keep your camera on, smile, and try to meet your new social group.
+0,-1,1,0
+2
+Socials are not what your here for. Dive into code with your buddy Google.
+1,-1,0,0
+2
+|
+2
+Introductions transition into an introduction to Code. Next, you are supposed to code along with some basic HTML that was covered in the Pre-Work.
+Code Along. Make the reference thing.
+1,-1,0,0
+3
+You can copy the refence at the end. Get caught up on your Social Media.
+0,1,1,0
+3
+|
+3
+The day is almost done. The instructor suggests you complete some optional challenges on your own.
+Good job you. Go live your life.
+0,1,1,0
+4
+Review the videos on canvas covering today and tomorrow. Ahead is good.
+2,-1,-1,0
+4
+|
+4
+Day two begins. After foreplay, todays activity is coding along with the teacher in a way that both gives examples of the code and leaves a reference you can use later.
+Code Along. Make more of the refence thing.
+1,-1,0,0
+5
+Turn the zoom volume down and zone out to music.
+0,1,1,0
+5
+|
+5
+Lunch comes. After lunch, you think you understand stuff, but its a little swimmy. The instructor starts into the next section of concepts.
+Keep Coding Along. Do the things.
+1,-1,-1,0
+6
+Ask questions about what you don't understand.
+2,-1,0,0
+6
+You can review the videos later. Get ahead on the weekend project so you can go party over the weekend.
+1,-1,0,0
+6
+|
+6
+The day is done. You think you got ... stuff ... but your not sure you understand it all. There is a quiz in canvas.
+Do the quiz using mostly your buddy Google then go play RealLife.
+0,1,1,1
+7
+Review the videos then do the quiz.
+1,0,0,1
+7
+The quiz doesnt matter much. Get a nap and head to the club.
+0,-1,1,0
+7
+|
+7
+Day three begins. Today covers Methods and boolean stuff. Its more "codealong" to make a reference stuff.
+Code Along. Just keep swimming.
+1,-1,0,0
+8
+Sudoku. Kinda of listen, but get the reference from your class buddy later.
+0,0,0,0
+8
+|
+8
+By lunch, you are a mix of excited, because you can see what you can do with this stuff, and drained because the lecture is tough.
+Eat food then get ready to eat more Code Along!
+0,1,0,0
+9
+Make something. You can see how to do it. Learn by doing.
+2,-1,0,0
+9
+Spin down your brain then kind of glaze over for the afternoon. You don't need to do it all in one day.
+0,1,1,0
+9
+|
+9
+At days end, there are two quizzes and a suggested challenge. Again, your not sure you got it all.
+Do the quizes with your buddy Google.
+0,1,1,1
+10
+Review the quizes, do your best, and turn it in with errors as a way to learn.
+1,0,0,0
+10
+|
+10
+Its thursday morning and your in front of the monitors again. In the morning, the content is Inheritance and Polymorphism.
+Code Along.
+-1,-1,0,0
+11
+Google the concepts.
+0,-1,0,0
+11
+|
+11
+In the afternoon, you do a small group project where you are supposed to create a Website about Bunnies and Squirrels.
+Take a backseat in the group. This is a vacation. Use it.
+0,1,1,0
+12
+Carry the group, because someone needs to do it.
+1,-1,0,0
+12
+Mostly talk and get to know your group.
+0,0,2,0
+12
+|
+12
+Your group isn't done, there is a quiz, and you need to do Real Life stuff this evening or risk angering your roommate.
+Do the quiz, clean the whole house, and go get groceries.
+0,-1,1,0
+13
+Finish the project and do the quiz and review tomorrows videos.
+2,-1,-1,0
+13
+Quiz with Google, help the group a little, and clean a little.
+1,1,1,0
+13
+|
+13
+The website is due at noon. Your group has a thing and it looks like it will be ok.
+Naptime.
+1,2,0,0
+14
+Improve the project.
+-1,-2,1,1
+14
+Chill with your group. Networking is part of the point.
+0,0,1,1
+14
+|
+14
+In the afternoon, your instructor covers stuff related to more advanced topics you don't think you really understand. He tells you that you are not expected to undertsand it.
+Try to ... code alongish ... just keep focusing.
+-1,-1,1,0
+15
+Sodoku and chill music. Imagine the car you want when you get your dev job.
+0,1,0,0
+15
+|
+15
+5:00pm comes and you made it through the first week. Yes, there is a quiz, and a solo website project due Tuesday. Its pretty basic and you have a version that is mostly done that almost meets the minimium standards for the project.
+You always wanted to make an awesome website: do it.
+-1,1,1,1
+16
+Polish it enough to get the points then enjoy your weekend.
+1,1,1,0
+16
+You need a break. Leave it for Monday.
+1,1,0,0
+16
+|
+16
+Congrats. You made it through the first week.
+|
